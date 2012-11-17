@@ -17,6 +17,7 @@ add-redis:
 	cp services/redis.js stack.io-on-dotcloud/project/
 	echo "\n[program:redisservice]\ncommand = /home/dotcloud/current/start.sh redis\ndirectory = /home/dotcloud/current/\n" >> stack.io-on-dotcloud/supervisord.conf
 	echo "\nstore:\n    type: redis\n" >> stack.io-on-dotcloud/dotcloud.yml
+	node ./tools/dependency-injector.js ./stack.io-on-dotcloud/project/package.json ./services/redis-dep.json
 clean:
 	rm -f master.tar.gz
 	rm -f stack.io.js*
