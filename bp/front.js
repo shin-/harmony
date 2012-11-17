@@ -5,7 +5,7 @@ var url = require('url');
 var stackiojs = fs.readFileSync('/home/dotcloud/current/stack.io.js', 'utf-8');
 var indexhtml = fs.readFileSync('/home/dotcloud/current/index.html', 'utf-8');
 
-indexhtml.replace('$$HOST$$', process.env['DOTCLOUD_SERVER_HTTP_HOST']);
+indexhtml = indexhtml.replace('$$HOST$$', process.env['DOTCLOUD_SERVER_HTTP_HOST']);
 
 http.createServer(function(req, rep) {
     if (url.parse(req.url).pathname == '/stack.io.js') {
