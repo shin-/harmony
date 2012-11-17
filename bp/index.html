@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>stack.io</title>
+        <script type="text/javascript" src="/stack.io.js"></script>
+        <script type="text/javascript">
+            var g_client;
+            stack.io({ host: "http://$$HOST$$" }, function(err, client) {
+                if (err) return console.log(err);
+                g_client = client;
+                console.log(client.services());
+            });
+        </script>
+    </head>
+    <body></body>
+</html>
