@@ -1,7 +1,15 @@
-# Harmony ~
+# Harmony
 
-1. Run `make`.
-2. `cd stack.io-on-dotcloud`
-2. `dotcloud create stackz`
-3. `dotcloud push`
-4. `dotcloud open frontend`
+## Initialize
+
+    make
+    make create-app APP=harmony
+
+## Deploy
+
+    make deploy APP=harmony
+
+## Add redis
+
+    make add-redis
+    make deploy APP=harmony
